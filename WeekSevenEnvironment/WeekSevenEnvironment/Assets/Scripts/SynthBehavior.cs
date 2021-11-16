@@ -12,7 +12,13 @@ public class SynthBehavior : MonoBehaviour
         {
             Cursor.visible = false;
             synthController.SetActive(true);
-            GetComponentInChildren<Synth>().LoadInitialPatch();
+
+            Synth synth = GetComponentInChildren<Synth>();
+
+            if (synth != null)
+            {
+                GetComponentInChildren<Synth>().LoadInitialPatch();
+            }
         }
     }
 
