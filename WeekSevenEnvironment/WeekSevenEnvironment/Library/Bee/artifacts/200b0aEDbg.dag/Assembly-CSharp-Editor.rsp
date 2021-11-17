@@ -369,6 +369,10 @@
 "Assets/AudioHelm/Editor/SequencerPositionUI.cs"
 "Assets/AudioHelm/Editor/SequencerUI.cs"
 "Assets/AudioHelm/Editor/SequencerVelocityUI.cs"
+"Assets/PrimitivePlus/Editor/PrimitivePlusMaterialEditor.cs"
+"Assets/PrimitivePlus/Editor/PrimitivePlusMenuItems.cs"
+"Assets/TENKOKU - DYNAMIC SKY/EDITOR/NoiseVolumeEditor.cs"
+"Assets/TENKOKU - DYNAMIC SKY/EDITOR/TenkokuModuleEditor.cs"
 -langversion:9.0
 
 /deterministic
