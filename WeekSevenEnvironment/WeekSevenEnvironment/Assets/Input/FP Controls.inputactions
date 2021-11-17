@@ -11,7 +11,8 @@
                     "id": "b09fab0b-dbfc-4fb2-81d0-49b6e2e4262b",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "CameraLook",
@@ -19,7 +20,8 @@
                     "id": "690dd8a3-487b-4aca-ac23-73834f742b3f",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

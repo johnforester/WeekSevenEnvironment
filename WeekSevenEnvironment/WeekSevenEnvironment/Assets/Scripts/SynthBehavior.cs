@@ -10,7 +10,6 @@ public class SynthBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Cursor.visible = false;
             synthController.SetActive(true);
 
             Synth synth = GetComponentInChildren<Synth>();
@@ -26,7 +25,6 @@ public class SynthBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Cursor.visible = true;
             synthController.SetActive(false);
         }
     }

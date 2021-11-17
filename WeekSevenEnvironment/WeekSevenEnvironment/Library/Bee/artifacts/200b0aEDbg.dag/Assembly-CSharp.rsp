@@ -380,6 +380,8 @@
 "Assets/AudioHelm/Scripts/SampleSequencer.cs"
 "Assets/AudioHelm/Scripts/Sequencer.cs"
 "Assets/AudioHelm/Scripts/Utils.cs"
+"Assets/PianoController.cs"
+"Assets/PlayerBehavior.cs"
 "Assets/Scripts/CameraLook.cs"
 "Assets/Scripts/DrumStickBehavior.cs"
 "Assets/Scripts/FirstPersonMovement.cs"
