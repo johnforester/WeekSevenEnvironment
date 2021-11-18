@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Synth
   - Ground
+  - Water
   layers:
   - Default
   - TransparentFX

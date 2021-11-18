@@ -11,8 +11,6 @@ public class FirstPersonMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded = true;
 
-    [SerializeField] float jumpForce = 3f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +25,14 @@ public class FirstPersonMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Water"))  
         {
-            isGrounded = true;
+            //rb.velocity = Vector3.zero;
+
+            Vector3 localDirection = transform.TransformDirection(direction);
+            rb.MovePosition(rb.position + -localDirection);
+
+            // JUMP BACK
         }
     }
 
@@ -39,15 +42,5 @@ public class FirstPersonMovement : MonoBehaviour
 
         direction.x = inputVector.x;
         direction.z = inputVector.y;
-    }
-
-    public void OnJump()
-    {
-        if (isGrounded)
-        {
-            isGrounded = false;
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-        
     }
 }

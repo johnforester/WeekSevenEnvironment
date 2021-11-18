@@ -113,6 +113,7 @@
 -define:ENABLE_TIMELINE
 -define:ENABLE_INPUT_SYSTEM
 -define:UNITY_POST_PROCESSING_STACK_V2
+-define:POSEIDON
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"/Applications/Unity/Hub/Editor/2021.2.2f1/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
@@ -369,10 +370,25 @@
 "Assets/AudioHelm/Editor/SequencerPositionUI.cs"
 "Assets/AudioHelm/Editor/SequencerUI.cs"
 "Assets/AudioHelm/Editor/SequencerVelocityUI.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PAreaEditingGUIDrawer.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PCompileLogger.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PEditorCommon.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PEditorMenus.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PPackageInitializer.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PSelectionGridArgs.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PSplineEditingGUIDrawer.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PSplineToolConfig.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PTilesEditingGUIDrawer.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PWaterInspector.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Core/PWaterProfileInspector.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Effects/PWaterFXInspector.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Effects/PWaterFXProfileInspector.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Effects/PWaterFXProfileInspectorDrawer.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PGriffinExtensionCommon.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PWaterQuickSetupConfig.cs"
+"Assets/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PWaterQuickSetupGriffinExtension.cs"
 "Assets/PrimitivePlus/Editor/PrimitivePlusMaterialEditor.cs"
 "Assets/PrimitivePlus/Editor/PrimitivePlusMenuItems.cs"
-"Assets/TENKOKU - DYNAMIC SKY/EDITOR/NoiseVolumeEditor.cs"
-"Assets/TENKOKU - DYNAMIC SKY/EDITOR/TenkokuModuleEditor.cs"
 -langversion:9.0
 
 /deterministic
