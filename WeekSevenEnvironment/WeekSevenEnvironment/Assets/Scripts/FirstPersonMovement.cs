@@ -29,10 +29,8 @@ public class FirstPersonMovement : MonoBehaviour
         {
             //rb.velocity = Vector3.zero;
 
-            Vector3 localDirection = transform.TransformDirection(direction);
-            rb.MovePosition(rb.position + -localDirection);
-
-            // JUMP BACK
+            //Vector3 localDirection = transform.TransformDirection(direction);
+            //rb.MovePosition(rb.position + -localDirection);
         }
     }
 
