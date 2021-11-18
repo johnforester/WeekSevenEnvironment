@@ -437,6 +437,7 @@
 "Assets/Scripts/DrumStickBehavior.cs"
 "Assets/Scripts/FirstPersonMovement.cs"
 "Assets/Scripts/PianoController.cs"
+"Assets/Scripts/RomanSynthController.cs"
 "Assets/Scripts/Synth.cs"
 "Assets/Scripts/SynthBehavior.cs"
 "Assets/TextMesh Pro/PlayerBehavior.cs"

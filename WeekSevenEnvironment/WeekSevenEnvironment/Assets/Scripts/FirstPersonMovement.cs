@@ -9,7 +9,6 @@ public class FirstPersonMovement : MonoBehaviour
     public float speed = 10.0f;
 
     private Rigidbody rb;
-    private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +20,6 @@ public class FirstPersonMovement : MonoBehaviour
     {
         Vector3 localDirection = transform.TransformDirection(direction);
         rb.MovePosition(rb.position + (localDirection * speed * Time.deltaTime));
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Water"))  
-        {
-            //rb.velocity = Vector3.zero;
-
-            //Vector3 localDirection = transform.TransformDirection(direction);
-            //rb.MovePosition(rb.position + -localDirection);
-        }
     }
 
     public void OnPlayerMove(InputValue value)
