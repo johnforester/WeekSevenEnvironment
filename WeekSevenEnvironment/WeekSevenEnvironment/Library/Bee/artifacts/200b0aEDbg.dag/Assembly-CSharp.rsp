@@ -439,6 +439,7 @@
 "Assets/Scripts/InteractionSystem.cs"
 "Assets/Scripts/LookAtTarget.cs"
 "Assets/Scripts/PianoController.cs"
+"Assets/Scripts/Playable.cs"
 "Assets/Scripts/RomanSynthController.cs"
 "Assets/Scripts/Synth.cs"
 "Assets/Scripts/SynthBehavior.cs"

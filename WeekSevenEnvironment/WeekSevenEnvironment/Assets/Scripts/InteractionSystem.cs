@@ -27,13 +27,21 @@ public class InteractionSystem : MonoBehaviour
 
         Ray ray = new Ray(transform.position, forward);
 
+        Debug.DrawRay(transform.position, forward * interactionDistance, Color.green);
+
         // Conduct raycast
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
+            //ToggleHighlight(false);
+
             focusedObject = hit.collider.gameObject;
+
+            ToggleHighlight(true);
         }
         else
         {
+            ToggleHighlight(false);
+
             focusedObject = null;
         }
     }
@@ -45,7 +53,7 @@ public class InteractionSystem : MonoBehaviour
             // drop what we're holding
             holding = false;
             heldObject.transform.parent = null;
-            heldObject.GetComponent<Rigidbody>().isKinematic = false;
+            //heldObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
         else if (focusedObject.CompareTag("Interactable"))
@@ -53,10 +61,32 @@ public class InteractionSystem : MonoBehaviour
             // pick up
             focusedObject.transform.parent = pickupSlot.transform;
             focusedObject.transform.position = pickupSlot.transform.position;
-            focusedObject.GetComponent<Rigidbody>().isKinematic = true;
+          //  focusedObject.GetComponent<Rigidbody>().isKinematic = true;
             holding = true;
             heldObject = focusedObject;
             focusedObject = null;
+        }
+    }
+
+    public void OnPlayInstrument()
+    {
+        Debug.Log("attempt play");
+
+        if (focusedObject.CompareTag("Playable"))
+        {
+            Debug.Log("play");
+
+            Playable playableObj = focusedObject.GetComponent<Playable>();
+            playableObj.PlayNote();
+        }
+    }
+
+    private void ToggleHighlight(bool isOn)
+    {
+        if (focusedObject.CompareTag("Playable") || focusedObject.CompareTag("Interactable"))
+        {
+            Material material = focusedObject.GetComponent<MeshRenderer>().material;
+            material.color = new Color(material.color.r, material.color.g, material.color.b, isOn ? 0.4f : 0f);
         }
     }
 }
