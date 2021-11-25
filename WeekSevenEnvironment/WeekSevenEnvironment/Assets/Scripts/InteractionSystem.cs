@@ -38,8 +38,6 @@ public class InteractionSystem : MonoBehaviour
 
             focusedObject = hit.collider.gameObject;
 
-            Debug.Log("focus obj: " + focusedObject);
-
             ToggleHighlight(true);
         }
         else if (focusedObject)
@@ -73,6 +71,11 @@ public class InteractionSystem : MonoBehaviour
 
     public void OnPlayInstrument()
     {
+        if (!focusedObject)
+        {
+            return;
+        }
+
         Playable playableObj = focusedObject.GetComponent<Playable>();
 
         if (playableObj)
