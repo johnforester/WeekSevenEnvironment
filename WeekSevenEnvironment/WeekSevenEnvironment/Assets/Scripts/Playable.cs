@@ -17,7 +17,14 @@ public class Playable : MonoBehaviour
 
     public void PlayNote()
     {
-        Debug.Log("play " + noteHandler + " " + Note);
         noteHandler.NoteOn(Note);
+        StartCoroutine(StopNote());
+    }
+
+    IEnumerator StopNote()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        noteHandler.AllNotesOff();
     }
 }

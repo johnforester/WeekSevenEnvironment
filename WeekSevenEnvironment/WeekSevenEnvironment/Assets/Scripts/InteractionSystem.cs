@@ -56,6 +56,7 @@ public class InteractionSystem : MonoBehaviour
             // drop what we're holding
             holding = false;
             heldObject.transform.parent = null;
+            focusedObject = null;
         }
 
         else if (focusedObject.CompareTag("Interactable"))
@@ -67,15 +68,15 @@ public class InteractionSystem : MonoBehaviour
             focusedObject.transform.position = pickupSlot.transform.position;
             holding = true;
             heldObject = focusedObject;
-            focusedObject = null;
         }
     }
 
     public void OnPlayInstrument()
     {
-        if (focusedObject.CompareTag("Playable"))
+        Playable playableObj = focusedObject.GetComponent<Playable>();
+
+        if (playableObj)
         {
-            Playable playableObj = focusedObject.GetComponent<Playable>();
             playableObj.PlayNote();
         }
     }
