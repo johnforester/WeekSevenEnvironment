@@ -6,6 +6,16 @@ public class MenuHandler : MonoBehaviour
 {
     [SerializeField] Canvas menuCanvas;
 
+    private void OnEnable()
+    {
+        Cursor.visible = true;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.visible = false;
+    }
+
     public void OnToggleMenu()
     {
         menuCanvas.enabled = !menuCanvas.enabled;

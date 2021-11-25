@@ -63,7 +63,6 @@ public class KeyboardBehavior : MonoBehaviour
 
             // normal next pointer pos to track
             Vector3 normaledPointerPos = Physics.ClosestPoint(nextPointerPos, pointerTrack, pointerTrack.gameObject.transform.position, pointerTrack.gameObject.transform.rotation);
-            pointer.transform.position = normaledPointerPos;
 
             float keyDistance = Vector3.Distance(normaledPointerPos, lowKeyPos.transform.position);
             float keyRatio = keyDistance / keyboardWidth;
@@ -75,7 +74,9 @@ public class KeyboardBehavior : MonoBehaviour
                 currentNote = nextKey;
                 synth.PlayNote(currentNote);
                 isPlaying = true;
-                pointerMovementEndposition = new Vector3(normaledPointerPos.x, pointerStartingY - 2f, normaledPointerPos.z);
+                pointerMovementEndposition = new Vector3(normaledPointerPos.x, pointerStartingY - 4f, normaledPointerPos.z);
+                pointer.transform.position = new Vector3(normaledPointerPos.x, pointerStartingY, normaledPointerPos.z);
+
             }
         }
 
