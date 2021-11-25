@@ -24,8 +24,13 @@ public class Synth : MonoBehaviour
 
             if (patch)
             {
+                Debug.Log("loading patch");
                 helmController.LoadPatch(patch);
             }
+        }
+        else
+        {
+            Debug.Log("patch already loaded");
         }
     }
 

@@ -436,6 +436,8 @@
 "Assets/Scripts/CameraLook.cs"
 "Assets/Scripts/DrumStickBehavior.cs"
 "Assets/Scripts/FirstPersonMovement.cs"
+"Assets/Scripts/InteractionSystem.cs"
+"Assets/Scripts/LookAtTarget.cs"
 "Assets/Scripts/PianoController.cs"
 "Assets/Scripts/RomanSynthController.cs"
 "Assets/Scripts/Synth.cs"
