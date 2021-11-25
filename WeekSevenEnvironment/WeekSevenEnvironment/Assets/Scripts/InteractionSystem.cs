@@ -29,19 +29,22 @@ public class InteractionSystem : MonoBehaviour
 
         Debug.DrawRay(transform.position, forward * interactionDistance, Color.green);
 
+        int layerMask = 1 << 6; // only detect Interactables
+
         // Conduct raycast
-        if (Physics.Raycast(ray, out hit, interactionDistance))
-        {
-            //ToggleHighlight(false);
-
-            focusedObject = hit.collider.gameObject;
-
-            ToggleHighlight(true);
-        }
-        else
+        if (Physics.Raycast(ray, out hit, interactionDistance, layerMask))
         {
             ToggleHighlight(false);
 
+            focusedObject = hit.collider.gameObject;
+
+            Debug.Log("focus obj: " + focusedObject);
+
+            ToggleHighlight(true);
+        }
+        else if (focusedObject)
+        {
+            ToggleHighlight(false);
             focusedObject = null;
         }
     }
@@ -53,15 +56,15 @@ public class InteractionSystem : MonoBehaviour
             // drop what we're holding
             holding = false;
             heldObject.transform.parent = null;
-            //heldObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
         else if (focusedObject.CompareTag("Interactable"))
         {
             // pick up
+            ToggleHighlight(false);
+
             focusedObject.transform.parent = pickupSlot.transform;
             focusedObject.transform.position = pickupSlot.transform.position;
-          //  focusedObject.GetComponent<Rigidbody>().isKinematic = true;
             holding = true;
             heldObject = focusedObject;
             focusedObject = null;
@@ -70,20 +73,26 @@ public class InteractionSystem : MonoBehaviour
 
     public void OnPlayInstrument()
     {
-        Debug.Log("attempt play");
-
         if (focusedObject.CompareTag("Playable"))
         {
-            Debug.Log("play");
-
             Playable playableObj = focusedObject.GetComponent<Playable>();
             playableObj.PlayNote();
         }
     }
 
+    private bool IsPlayableOrInteractable(GameObject obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+
+        return obj.CompareTag("Playable") || obj.CompareTag("Interactable");
+    }
+
     private void ToggleHighlight(bool isOn)
     {
-        if (focusedObject.CompareTag("Playable") || focusedObject.CompareTag("Interactable"))
+        if (IsPlayableOrInteractable(focusedObject))
         {
             Material material = focusedObject.GetComponent<MeshRenderer>().material;
             material.color = new Color(material.color.r, material.color.g, material.color.b, isOn ? 0.4f : 0f);
